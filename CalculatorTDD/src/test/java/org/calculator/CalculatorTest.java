@@ -88,4 +88,12 @@ public class CalculatorTest {
         assertEquals(6, calculator.Add("//[###]\n1###2###3"));
         assertEquals(6, calculator.Add("//[***]\n1***2***3***1001"));
     }
+
+    @Test
+    public void shouldAddWithMultipleDelimiters() {
+        assertEquals(6, calculator.Add("//[*][%]\n1*2%3"));
+        assertEquals(6, calculator.Add("//[*][%]\n1*2%3"));
+        assertEquals(6, calculator.Add("//[*][%]\n1*2%3*1001"));
+        assertEquals(6, calculator.Add("//[?][^]\n1?2^3"));
+    }
 }
