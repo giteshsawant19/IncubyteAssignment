@@ -82,4 +82,10 @@ public class CalculatorTest {
         assertEquals(0, calculator.Add("1001,1002,1003"));
         assertEquals(6, calculator.Add("//|\n1|2|3|1001"));
     }
+
+    @Test
+    public void shouldAllowAnyLengthOfDelimiter() {
+        assertEquals(6, calculator.Add("//[###]\n1###2###3"));
+        assertEquals(6, calculator.Add("//[***]\n1***2***3***1001"));
+    }
 }

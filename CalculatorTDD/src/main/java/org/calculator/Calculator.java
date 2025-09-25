@@ -16,7 +16,13 @@ public class Calculator {
         if(numbers.startsWith("//")) {
             int newLineIndex = numbers.indexOf('\n');
             if(newLineIndex != -1) {
-                delimiter = numbers.substring(2,newLineIndex);
+                String delimiterPart = numbers.substring(2,newLineIndex);
+
+                if(delimiterPart.startsWith("[") && delimiterPart.endsWith("]")) {
+                    delimiter = delimiterPart.substring(1, delimiterPart.length() - 1);
+                } else {
+                    delimiter = delimiterPart;
+                }
                 numbersToProcess = numbers.substring(newLineIndex+1);
             }
         }
