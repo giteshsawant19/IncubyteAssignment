@@ -36,4 +36,11 @@ public class CalculatorTest {
         assertEquals(5, calculator.Add("2\n3"));
         assertEquals(25, calculator.Add("5,15\n5"));
     }
+
+    @Test
+    public void shouldAddWithDelimiters() {
+        assertEquals(10, calculator.Add("//;\n1;9"));
+        assertEquals(6, calculator.Add("//@\n1@2@3"));
+        assertEquals(10, calculator.Add("//$\n1$2$3$4"));
+    }
 }
