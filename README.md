@@ -4,16 +4,16 @@ A Test-Driven Development (TDD) implementation of a String Calculator that can h
 
 ## Features
 
-- ✅ **Basic Operations**: Add numbers separated by commas
-- ✅ **Empty String Support**: Returns 0 for empty input
-- ✅ **Unknown Amount of Numbers**: Handles any number of comma-separated values
-- ✅ **New Line Delimiters**: Supports new lines as delimiters (`\n`)
-- ✅ **Custom Delimiters**: Single character custom delimiters (`//;\n1;2`)
-- ✅ **Any Length Delimiters**: Delimiters of any length (`//[***]\n1***2***3`)
-- ✅ **Multiple Delimiters**: Multiple delimiters of any length (`//[*][%]\n1*2%3`)
-- ✅ **Negative Number Validation**: Throws exception with all negative numbers listed
-- ✅ **Large Number Filtering**: Ignores numbers greater than 1000
-- ✅ **Special Character Support**: Handles regex special characters in delimiters
+- **Basic Operations**: Add numbers separated by commas
+- **Empty String Support**: Returns 0 for empty input
+- **Unknown Amount of Numbers**: Handles any number of comma-separated values
+- **New Line Delimiters**: Supports new lines as delimiters (`\n`)
+- **Custom Delimiters**: Single character custom delimiters (`//;\n1;2`)
+- **Any Length Delimiters**: Delimiters of any length (`//[***]\n1***2***3`)
+- **Multiple Delimiters**: Multiple delimiters of any length (`//[*][%]\n1*2%3`)
+- **Negative Number Validation**: Throws exception with all negative numbers listed
+- **Large Number Filtering**: Ignores numbers greater than 1000
+- **Special Character Support**: Handles regex special characters in delimiters
 
 ## Prerequisites
 
