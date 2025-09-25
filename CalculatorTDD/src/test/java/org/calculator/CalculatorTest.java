@@ -30,4 +30,10 @@ public class CalculatorTest {
         assertEquals(25, calculator.Add("24,1"));
         assertEquals(0, calculator.Add("0,0,0"));
     }
+
+    @Test
+    public void shouldAddNumberWithNewLines() {
+        assertEquals(5, calculator.Add("2\n3"));
+        assertEquals(25, calculator.Add("5,15\n5"));
+    }
 }
