@@ -74,4 +74,12 @@ public class CalculatorTest {
             assertEquals("negatives not allowed: -2", e.getMessage());
         }
     }
+
+    @Test
+    public void shouldNotAddNumbersBiggerThan1000() {
+        assertEquals(2, calculator.Add("2,1001"));
+        assertEquals(3, calculator.Add("1\n2,1001"));
+        assertEquals(0, calculator.Add("1001,1002,1003"));
+        assertEquals(6, calculator.Add("//|\n1|2|3|1001"));
+    }
 }

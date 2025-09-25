@@ -39,8 +39,11 @@ public class Calculator {
 
         int sum = 0;
         for(String number : numberStrings) {
-            sum += Integer.parseInt(number.trim());
-        }
+                int numberValue = Integer.parseInt(number);
+                if (numberValue <= 1000) {
+                    sum += numberValue;
+                }
+            }
         return sum;
     }
 
