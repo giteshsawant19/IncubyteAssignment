@@ -1,5 +1,6 @@
 package org.calculator;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,5 +43,35 @@ public class CalculatorTest {
         assertEquals(10, calculator.Add("//;\n1;9"));
         assertEquals(6, calculator.Add("//@\n1@2@3"));
         assertEquals(10, calculator.Add("//$\n1$2$3$4"));
+    }
+
+    @Test
+    public void shouldNotAllowAddWithSingleNegativeNumber() {
+        try {
+            calculator.Add("1,-2,3");
+            Assertions.fail("Expected RuntimeException for negative numbers");
+        } catch (RuntimeException e) {
+            assertEquals("negatives not allowed: -2",e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotAllowAddWithMultipleNegativeNumbers() {
+        try {
+            calculator.Add("1\n-2,-3");
+            Assertions.fail("Expected RuntimeException for negative numbers");
+        } catch (RuntimeException e) {
+            assertEquals("negatives not allowed: -2, -3",e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotAllowAddWithMultipleNegativeNumbersAndCustomDelimiter() {
+        try {
+            calculator.Add("//;\n1;-2;3");
+            org.junit.jupiter.api.Assertions.fail("Expected RuntimeException for negative numbers");
+        } catch (RuntimeException e) {
+            assertEquals("negatives not allowed: -2", e.getMessage());
+        }
     }
 }
