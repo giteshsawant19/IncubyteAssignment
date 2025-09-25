@@ -18,4 +18,8 @@ public class CalculatorTest {
         assertEquals(1,calculator.Add("1"));
     }
 
+    @Test
+    public void shouldAddTwoNumbers() {
+        assertEquals(4,calculator.Add("1,3"));
+    }
 }
