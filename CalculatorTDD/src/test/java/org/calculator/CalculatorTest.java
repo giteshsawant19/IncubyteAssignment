@@ -12,4 +12,10 @@ public class CalculatorTest {
     public void shouldReturnZeroOnEmptyString() {
         assertEquals(0, calculator.Add(""));
     }
+
+    @Test
+    public void shouldAddSingleNumber() {
+        assertEquals(1,calculator.Add("1"));
+    }
+
 }

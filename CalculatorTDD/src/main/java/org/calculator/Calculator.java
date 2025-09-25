@@ -6,6 +6,12 @@ public class Calculator {
         if(numbers.isEmpty()){
             return 0;
         }
-        return -1;
+
+        String[] numberStrings = numbers.split(",");
+        int sum = 0;
+        for(String number : numberStrings) {
+            sum += Integer.parseInt(number.trim());
+        }
+        return sum;
     }
 }
